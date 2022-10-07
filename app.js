@@ -4,12 +4,12 @@ const dessertMenuContainer = document.querySelector("#dessert-menu");
 const drinkMenuContainer = document.querySelector("#drink-menu");
 const cartTotalDisplay = document.querySelector(".cart-total");
 cartTotalDisplay.innerText = cartTotal;
-createFoodMenuCards();
-createDessertMenuCards();
-createDrinkMenuCards();
+displayFoodMenuCards();
+displayDessertMenuCards();
+displayDrinkMenuCards();
 
 //Use a for...of loop to iterate over the foodMenuItems array and create menu item cards for each of them.
-function createFoodMenuCards() {
+function displayFoodMenuCards() {
   for (let foodMenuItem of foodMenuItems) {
     const foodMenuCard = createMenuCard(foodMenuItem);
     foodMenuContainer.appendChild(foodMenuCard);
@@ -17,7 +17,7 @@ function createFoodMenuCards() {
 }
 
 //Use a for...in loop to create menu item cards for each drink in the drinkMenuItems array.
-function createDrinkMenuCards() {
+function displayDrinkMenuCards() {
   for (menuItem in drinkMenuItems) {
     const drinkMenuCard = createMenuCard(drinkMenuItems[menuItem]);
     drinkMenuContainer.appendChild(drinkMenuCard);
@@ -25,7 +25,7 @@ function createDrinkMenuCards() {
 }
 //Use the .map() method to iterate over the dessertMenuItems array and create menu item cards for each of them.
 
-function createDessertMenuCards() {
+function displayDessertMenuCards() {
   return dessertMenuItems.map((dessertMenuItem) => {
     const dessertMenuCard = createMenuCard(dessertMenuItem);
     dessertMenuContainer.appendChild(dessertMenuCard);
@@ -33,7 +33,6 @@ function createDessertMenuCards() {
 }
 //Refactor your code so it is DRY
 function createMenuCard(menuItem) {
-  console.log(menuItem);
   const { name, price, description, image } = menuItem;
   const menuCard = document.createElement("div");
   menuCard.classList.add("menu-item");
@@ -68,4 +67,3 @@ function createMenuCard(menuItem) {
   });
   return menuCard;
 }
-
