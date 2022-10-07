@@ -34,7 +34,7 @@ In this challenge, you will be creating cards for each menu item displayed in th
         </div>
         <div class="card-footer">
             <p class="price">$10</p>
-            <button>Add to Cart</button>
+            <button value=${price}>Add to Cart</button>
         </div>
     </div>
 </div>
