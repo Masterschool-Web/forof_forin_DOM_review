@@ -16,7 +16,7 @@ function createFoodMenuCards() {
   }
 }
 
-//Use a for...in loop to iterate over the drinkMenuItems array and create menu item cards for each of them.
+//Use a for...in loop to create menu item cards for each drink in the drinkMenuItems array.
 function createDrinkMenuCards() {
   for (menuItem in drinkMenuItems) {
     const drinkMenuCard = createMenuCard(drinkMenuItems[menuItem]);
@@ -33,6 +33,7 @@ function createDessertMenuCards() {
 }
 //Refactor your code so it is DRY
 function createMenuCard(menuItem) {
+  console.log(menuItem);
   const { name, price, description, image } = menuItem;
   const menuCard = document.createElement("div");
   menuCard.classList.add("menu-item");
@@ -67,5 +68,4 @@ function createMenuCard(menuItem) {
   });
   return menuCard;
 }
-
 
