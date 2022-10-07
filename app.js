@@ -16,19 +16,20 @@ function createFoodMenuCards() {
   }
 }
 
-//Use the .map() method to iterate over the drinkMenuItems array and create menu item cards for each of them.
+//Use a for...in loop to iterate over the drinkMenuItems array and create menu item cards for each of them.
 function createDrinkMenuCards() {
-  return drinkMenuItems.map((drinkMenuItem) => {
-    const drinkMenuCard = createMenuCard(drinkMenuItem);
+  for (menuItem in drinkMenuItems) {
+    const drinkMenuCard = createMenuCard(drinkMenuItems[menuItem]);
     drinkMenuContainer.appendChild(drinkMenuCard);
-  });
-}
-//Use a for...in loop to iterate over the dessertMenuItems array and create menu item cards for each of them.
-function createDessertMenuCards() {
-  for (menuItem in dessertMenuItems) {
-    const dessertMenuCard = createMenuCard(dessertMenuItems[menuItem]);
-    dessertMenuContainer.appendChild(dessertMenuCard);
   }
+}
+//Use the .map() method to iterate over the dessertMenuItems array and create menu item cards for each of them.
+
+function createDessertMenuCards() {
+  return dessertMenuItems.map((dessertMenuItem) => {
+    const dessertMenuCard = createMenuCard(dessertMenuItem);
+    dessertMenuContainer.appendChild(dessertMenuCard);
+  });
 }
 //Refactor your code so it is DRY
 function createMenuCard(menuItem) {
@@ -61,9 +62,10 @@ function createMenuCard(menuItem) {
 
   const button = menuCard.querySelector("button");
   button.addEventListener("click", () => {
-    console.log("button clicked", button.value);
     cartTotal += Number(button.value);
     cartTotalDisplay.textContent = cartTotal;
   });
   return menuCard;
 }
+
+
