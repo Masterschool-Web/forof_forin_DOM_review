@@ -33,7 +33,6 @@ function createDessertMenuCards() {
 }
 //Refactor your code so it is DRY
 function createMenuCard(menuItem) {
-  console.log(menuItem);
   const { name, price, description, image } = menuItem;
   const menuCard = document.createElement("div");
   menuCard.classList.add("menu-item");
@@ -69,3 +68,35 @@ function createMenuCard(menuItem) {
   return menuCard;
 }
 
+function searchMenuItems(menuItems, searchInputValue) {
+  return menuItems.filter((menuItem) =>
+    menuItem.name.toLowerCase().includes(searchInputValue.toLowerCase())
+  );
+}
+
+//Add a submit event listener to the menu search form that 
+//takes in the search value 
+//adds a section header that reads, `Search Results for "${searchInputValue}"`
+//and displays all search results as menu cards in the search results section using the .forEach method
+const searchForm = document.querySelector(".menu-search-form");
+const searchResultsSection = document.querySelector("#search-results");
+
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const searchInputValue = new FormData(event.target).get("search-input");
+  const allMenuItems = [
+    ...foodMenuItems,
+    ...dessertMenuItems,
+    ...drinkMenuItems,
+  ];
+  const searchResultsHeader = document.createElement("h1");
+  searchResultsHeader.innerText = `Search Results for "${searchInputValue}"`;
+  searchResultsSection.appendChild(searchResultsHeader);
+
+  const filteredMenuItems = searchMenuItems(allMenuItems, searchInputValue);
+
+  filteredMenuItems.forEach((menuItem) => {
+    const searchResultCard = createMenuCard(menuItem);
+    searchResultsSection.appendChild(searchResultCard);
+  });
+});

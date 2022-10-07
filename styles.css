@@ -39,8 +39,9 @@ nav ul li a:hover {
 
 section {
   max-width: 1200px;
-  margin: auto;
+  margin: 50px auto;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .menu-item {
   background: #fff;
@@ -146,4 +147,26 @@ section {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+}
+form {
+  width: 100%;
+}
+form input {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+form button {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 10px;
 }
