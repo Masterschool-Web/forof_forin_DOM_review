@@ -4,12 +4,12 @@ const dessertMenuContainer = document.querySelector("#dessert-menu");
 const drinkMenuContainer = document.querySelector("#drink-menu");
 const cartTotalDisplay = document.querySelector(".cart-total");
 cartTotalDisplay.innerText = cartTotal;
-createFoodMenuCards();
-createDessertMenuCards();
-createDrinkMenuCards();
+displayFoodMenuCards();
+displayDessertMenuCards();
+displayDrinkMenuCards();
 
 //Use a for...of loop to iterate over the foodMenuItems array and create menu item cards for each of them.
-function createFoodMenuCards() {
+function displayFoodMenuCards() {
   for (let foodMenuItem of foodMenuItems) {
     const foodMenuCard = createMenuCard(foodMenuItem);
     foodMenuContainer.appendChild(foodMenuCard);
@@ -17,7 +17,7 @@ function createFoodMenuCards() {
 }
 
 //Use a for...in loop to create menu item cards for each drink in the drinkMenuItems array.
-function createDrinkMenuCards() {
+function displayDrinkMenuCards() {
   for (menuItem in drinkMenuItems) {
     const drinkMenuCard = createMenuCard(drinkMenuItems[menuItem]);
     drinkMenuContainer.appendChild(drinkMenuCard);
@@ -25,7 +25,7 @@ function createDrinkMenuCards() {
 }
 //Use the .map() method to iterate over the dessertMenuItems array and create menu item cards for each of them.
 
-function createDessertMenuCards() {
+function displayDessertMenuCards() {
   return dessertMenuItems.map((dessertMenuItem) => {
     const dessertMenuCard = createMenuCard(dessertMenuItem);
     dessertMenuContainer.appendChild(dessertMenuCard);
@@ -68,14 +68,8 @@ function createMenuCard(menuItem) {
   return menuCard;
 }
 
-function searchMenuItems(menuItems, searchInputValue) {
-  return menuItems.filter((menuItem) =>
-    menuItem.name.toLowerCase().includes(searchInputValue.toLowerCase())
-  );
-}
-
-//Add a submit event listener to the menu search form that 
-//takes in the search value 
+//Add a submit event listener to the menu search form that
+//takes in the search value
 //adds a section header that reads, `Search Results for "${searchInputValue}"`
 //and displays all search results as menu cards in the search results section using the .forEach method
 const searchForm = document.querySelector(".menu-search-form");
@@ -100,3 +94,9 @@ searchForm.addEventListener("submit", (event) => {
     searchResultsSection.appendChild(searchResultCard);
   });
 });
+
+function searchMenuItems(menuItems, searchInputValue) {
+  return menuItems.filter((menuItem) =>
+    menuItem.name.toLowerCase().includes(searchInputValue.toLowerCase())
+  );
+}
