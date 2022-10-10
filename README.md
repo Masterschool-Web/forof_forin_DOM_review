@@ -48,6 +48,13 @@ Use a `for...of` loop to iterate over the `foodMenuItems` array and create menu 
 
 Use the `for...in` loop to iterate over the `drinkMenuItems` array and create menu item cards for each of them.
 
+#### Note
+
+The for...in loop is used to iterate over the properties of an object.
+
+- Why is it less ideal to use a for...in loop to iterate over an array?
+  Because it will iterate over the index of the array, not the values of the array.
+
 ### map
 
 Use the `.map` method to iterate over the `dessertMenuItems` array and create menu item cards for each of them.
@@ -59,3 +66,8 @@ Refactor your code so that you do not repeat yourself.
 ### Event Listener
 
 Add an event listener to all menu item `buttons` that adds the `price` of the menu item to the `cartTotal` variable and updates the cart total in the DOM.
+
+### Resources
+
+- [Cheatsheet: JS loops (forEach, for/in, for/of)](https://dev.to/sylwiavargas/cheatsheet-js-loops-foreach-for-in-for-of-3hj2)
+- [Cheatsheets/Learn JavaScript Loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops/cheatsheet)
