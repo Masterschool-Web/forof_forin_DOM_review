@@ -1,6 +1,6 @@
 # Restaurant Website
 
-To complete this challenge, you will finish building this restaurant website using DOM Manipulation as well as `for...of` and `for...in` loops.
+To complete this challenge, you will finish building this restaurant website using **DOM Manipulation** as well as `for...of` and `for...in` loops.
 
 Menu items in each website section will be displayed using the `foodMenuItems`, `drinkMenuItems`, `dessertMenuItems` arrays in the `data.js` file.
 
@@ -48,6 +48,31 @@ Use a `for...of` loop to iterate over the `foodMenuItems` array and create menu 
 
 Use the `for...in` loop to iterate over the `drinkMenuItems` array and create menu item cards for each of them.
 
+#### Check Your Understanding
+
+<details>
+    <summary> 
+        <strong>Question:</strong> Why is it <strong>less</strong> ideal to use a <code>for...in</code> loop (as opposed to a <code>for...of</code> loop) to iterate over an array?
+    </summary>
+
+**Answer:**
+The `for...in` loop will iterate over the index of the array, not the values of the array. Therefore, it is best used to iterate over the properties of an object rather than an array.
+
+```js
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+```
+
+</details>
+
 ### map
 
 Use the `.map` method to iterate over the `dessertMenuItems` array and create menu item cards for each of them.
@@ -59,3 +84,10 @@ Refactor your code so that you do not repeat yourself.
 ### Event Listener
 
 Add an event listener to all menu item `buttons` that adds the `price` of the menu item to the `cartTotal` variable and updates the cart total in the DOM.
+
+### Resources
+
+- [for...of MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+- [for...in MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+- [Cheatsheet: JS loops (forEach, for/in, for/of)](https://dev.to/sylwiavargas/cheatsheet-js-loops-foreach-for-in-for-of-3hj2)
+- [Cheatsheets/Learn JavaScript Loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops/cheatsheet)
