@@ -1,6 +1,6 @@
 # Restaurant Website
 
-To complete this challenge, you will finish building this restaurant website using DOM Manipulation as well as `for...of` and `for...in` loops.
+To complete this challenge, you will finish building this restaurant website using **DOM Manipulation** as well as `for...of` and `for...in` loops.
 
 Menu items in each website section will be displayed using the `foodMenuItems`, `drinkMenuItems`, `dessertMenuItems` arrays in the `data.js` file.
 
@@ -48,14 +48,15 @@ Use a `for...of` loop to iterate over the `foodMenuItems` array and create menu 
 
 Use the `for...in` loop to iterate over the `drinkMenuItems` array and create menu item cards for each of them.
 
-#### Note
-
-The for...in loop is used to iterate over the properties of an object.
+#### Check Your Understanding
 
 <details>
-<summary>**Question:** Why is it less ideal to use a for...in loop to iterate over an array?</summary>
+    <summary> 
+        <strong>Question:</strong> Why is it <strong>less</strong> ideal to use a <code>for...in</code> loop (as opposed to a <code>for...of</code> loop) to iterate over an array?
+    </summary>
 
-**Answer:** Because it will iterate over the index of the array, not the values of the array.
+**Answer:**
+The `for...in` loop will iterate over the index of the array, not the values of the array. Therefore, it is best used to iterate over the properties of an object rather than an array.
 
 ```js
 const object = { a: 1, b: 2, c: 3 };
