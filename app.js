@@ -11,13 +11,38 @@ displayDrinkMenuCards();
 //Use a for...of loop to iterate over the foodMenuItems array and create menu item cards for each of them.
 function displayFoodMenuCards() {
   for (let foodMenuItem of foodMenuItems) {
-    const foodMenuCard = createMenuCard(foodMenuItem);
+    // const foodMenuCard = createMenuCard(foodMenuItem);
+    const { name, price, description, image } = foodMenuItem;
+    const foodMenuCard = document.createElement("div");
+    foodMenuCard.classList.add("menu-item");
+    foodMenuCard.innerHTML = `
+        <div class="card">
+          <div class="card-header">
+            <h2>${name}</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-body-left">
+              <img
+                src=${image}
+                alt=${name}
+              />
+            </div>
+            <div class="card-body-right">
+              <p>${description}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="price">$${price}</p>
+            <button value=${price}>Add to Cart</button>
+          </div>
+        </div>
+        `;
     foodMenuContainer.appendChild(foodMenuCard);
   }
 }
 
 //Use a for...in loop to create menu item cards for each drink in the drinkMenuItems array.
-//The for...in loop is used to iterate over the properties of an object. 
+//The for...in loop is used to iterate over the properties of an object.
 //Why is it less ideal to use a for...in loop to iterate over an array?
 //because it will iterate over the index of the array, not the values of the array.
 function displayDrinkMenuCards() {
