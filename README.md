@@ -52,8 +52,10 @@ Use the `for...in` loop to iterate over the `drinkMenuItems` array and create me
 
 The for...in loop is used to iterate over the properties of an object.
 
-- Why is it less ideal to use a for...in loop to iterate over an array?
-  Because it will iterate over the index of the array, not the values of the array.
+<details>
+<summary>Why is it less ideal to use a for...in loop to iterate over an array?</summary>
+Because it will iterate over the index of the array, not the values of the array.
+</details>
 
 ### map
 
