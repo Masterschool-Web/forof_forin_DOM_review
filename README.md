@@ -57,6 +57,19 @@ The for...in loop is used to iterate over the properties of an object.
 
 **Answer:** Because it will iterate over the index of the array, not the values of the array.
 
+```js
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+```
+
 </details>
 
 ### map
@@ -73,5 +86,7 @@ Add an event listener to all menu item `buttons` that adds the `price` of the me
 
 ### Resources
 
+- [for...of MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+- [for...in MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 - [Cheatsheet: JS loops (forEach, for/in, for/of)](https://dev.to/sylwiavargas/cheatsheet-js-loops-foreach-for-in-for-of-3hj2)
 - [Cheatsheets/Learn JavaScript Loops](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-loops/cheatsheet)
